@@ -247,6 +247,23 @@
         };
 
         /**
+         * 对数组应用去重
+         * @param array
+         */
+        core.unique =function(array){
+            var res = [],
+                json = {},
+                i;
+            for( i = 0; i < array.length; i++){
+                if(!json[array[i]]){
+                    res.push(array[i]);
+                    json[array[i]] = 1;
+                }
+            }
+            return res;
+        };
+
+        /**
          * 删除一组attr
          * @param key
          * @returns {core.fn}
